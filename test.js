@@ -1,18 +1,23 @@
+
+
 var tuple1 = new Tuple;
 
-tuple1.set('a', 2)
+tuple1.set('0', 2)
           ('b', 4)
           ('c', 6)
 ;
 
-var tuple2 = new Tuple;
-
-tuple2.add('d', 2)
+tuple1.add('d', 2)
           ('e', 4)
           ('f', 6)
 ;
 
-tuple.tie(tuple2);
-tuple.remove('b');
+var tuple2 = new Tuple;
 
-console.log(tuple.get());
+tuple2.set('g', 2);
+
+
+tuple1.tie(tuple2);
+tuple1.remove('b');
+
+console.log(tuple1.get(0));
