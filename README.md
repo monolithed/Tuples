@@ -65,46 +65,54 @@ tuple.clear();
 
 ## Examples
 
-* 1.
+* 1. Get and set fields
+
+```javascript
+var tuple = new Tuple;
+
+tuple.set('a', 0)(1, 2)('function', function(param) {
+	alert(param);
+});
+
+tuple.get('a');           // 0
+tuple.get('function')(1); // 1
+tuple.get(1);             // 2
+tuple.get();              // {a: 1, 'function': [ object Function ], 1: 2}
+```
+
+
+* 2. Add or modify fields
 
 ```javascript
 var tuple = new Tuple;
 
 tuple.set('a', 1)
          ('b', 2)
-         ('c', 3)
 ;
 
-tuple.add('d', 4)
-         ('e', 5)
-         ('f', 6)
+tuple.add('c', 3)
+         ('d', 4)
 ;
 
-tuple.get();
-// {a: 1, b: 2, c: 3, d: 4, e: 5, f: 6}
+tuple.add(1, 5);
+
+tuple.get(); // {a: 1, b: 2, c: 3, d: 4, 1: 5}
 ```
 
-* 2.
+* 2. // Tie fields
 
 ```javascript
 var tuple1 = new Tuple;
 var tuple2 = new Tuple;
 
-tuple1.set('a', 1)
-          ('b', 2)
-          ('c', 3)
-;
-
-tuple2.set('d', 4)
-          ('e', 5)
-          ('f', 6)
-;
+tuple1.set('a', 1);
+tuple2.set('b', 2)
 
 tuple1.tie(tuple2);
-// tuple1: {a: 1, b: 2, c: 3, d: 4, e: 5, f: 6}
+// tuple1: {a: 1, b: 2}
 ```
 
-* 3.
+* 3. Remove fields
 
 ```javascript
 var tuple = new Tuple;
@@ -119,7 +127,7 @@ tuple.remove('a');
 ```
 
 
-* 4.
+* 4. Get size of fields
 
 ```javascript
 var tuple = new Tuple;
@@ -130,6 +138,20 @@ tuple.set('a', 1)
 ;
 
 tuple.size(); // 3
+```
+
+* 4. Clear the fields
+
+```javascript
+var tuple = new Tuple;
+
+tuple.set('a', 1)
+         ('b', 2)
+         ('c', 3)
+;
+
+tuple.clear(); // true
+tuple.size();  // 0
 ```
 
 
