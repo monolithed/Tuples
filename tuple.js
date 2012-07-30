@@ -131,29 +131,3 @@ var Tuple = (function(prototype)
 	return __init__;
 
 }(Object.prototype));
-
-var tuple = new Tuple;
-
-tuple.set('a', 2)
-         ('b', 4)
-         ('c', 6)
-;
-
-tuple.add('d', 2)
-         ('e', 4)
-         ('f', 6)
-;
-
-var tuple2 = new Tuple;
-
-tuple2.set('g', 2);
-
-tuple.tie(tuple2);
-
-tuple.remove('b');
-
-console.log(tuple.get());
-
-//console.log(tuple.data);
-
-
