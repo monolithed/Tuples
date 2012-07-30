@@ -46,10 +46,10 @@ var Tuple = (function(prototype)
 		*/
 
 		/*
-		- Generic get ( [ String name ] );
+		- Generic get ( [ String | Number name ] );
 		*/
 		get: function(name) {
-			return typeof name === 'string' ? this.data[name] : this.data;
+			return typeof name === 'string' || typeof name === 'number' ? this.data[name + ''] : this.data;
 		},
 
 		/*
