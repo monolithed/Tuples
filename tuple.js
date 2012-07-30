@@ -1,7 +1,7 @@
 /**
  * Object Tuple
  * Licensed under the MIT
- * @depends: Object.keys, Function.prototype.bind
+ * @depends: Object.keys, Function.prototype.bind, Function.prototype.apply
  * @author: Alexander Guinness
  * @version: 1.0
  * @date: Thu Aug 02 03:00:00 2012
@@ -17,22 +17,6 @@ var Tuple = (function(prototype)
 		*/
 		data: function(param) {
 			this.data[param[0]] = param[1];
-		},
-
-		/*
-		- Function pair ( [ object Arguments ] );
-		*/
-		pair: function() {
-			__private__.data.call(this, arguments);
-
-			var push = function() {
-				__private__.data.call(this, arguments);
-
-				return push;
-
-			}.bind(this);
-
-			return push;
 		}
 	};
 
@@ -83,29 +67,38 @@ var Tuple = (function(prototype)
 		*/
 		set: function() {
 			this.clear();
-			return __private__.pair.apply(this, arguments);
+			return this.add.apply(this, arguments);
 		},
 
 		/*
 		- Function add ( );
 		*/
 		add: function() {
-			return __private__.pair.apply(this, arguments);
+			__private__.data.call(this, arguments);
+
+			var push = function() {
+				__private__.data.call(this, arguments);
+
+				return push;
+
+			}.bind(this);
+
+			return push;
 		},
 
 		/*
 		- void tie ( );
 		*/
 		tie: function(object) {
-			var own = prototype.hasOwnProperty;
+			var __own__ = prototype.hasOwnProperty;
 
-			if (prototype.toString.call(object) !== '[object Object]' && !own.call(object, 'data'))
+			if (prototype.toString.call(object) !== '[object Object]' && !__own__.call(object, 'data'))
 				throw new TypeError(object + ' : is not object');
 
 			var data = object.data;
 
 			for (var i in data) {
-				if (own.call(data, i))
+				if (__own__.call(data, i))
 					this.data[i] = data[i];
 			}
 		},
