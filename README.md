@@ -80,7 +80,7 @@ tuple.add('d', 4)
          ('f', 6)
 ;
 
-tuple2.get();
+tuple.get();
 // {a: 1, b: 2, c: 3, d: 4, e: 5, f: 6}
 ```
 
