@@ -7,7 +7,7 @@
  * @date: Thu Aug 02 03:00:00 2012
  **/
 
-var Tuple = (function(prototype)
+var Tuple = (function(__object__)
 {
 	var __init__ = function() { },
 
@@ -90,9 +90,9 @@ var Tuple = (function(prototype)
 		- void tie ( );
 		*/
 		tie: function(object) {
-			var __own__ = prototype.hasOwnProperty;
+			var __own__ = __object__.hasOwnProperty;
 
-			if (prototype.toString.call(object) !== '[object Object]' && !__own__.call(object, 'data'))
+			if (__object__.toString.call(object) !== '[object Object]' && !__own__.call(object, 'data'))
 				throw new TypeError(object + ' : is not object');
 
 			var data = object.data;
