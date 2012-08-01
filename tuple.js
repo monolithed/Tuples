@@ -30,7 +30,7 @@ var Tuple = (function(prototype)
 		*/
 
 		/*
-		- Generic get ( [ String | Number name ] );
+		- * get ( [ String | Number name ] );
 		*/
 		get: function(name) {
 			return typeof name === 'string' || typeof name === 'number' ? this.data[name + ''] : this.data;
