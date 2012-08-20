@@ -140,7 +140,7 @@ tuple.set('a', 1)
 tuple.size(); // 3
 ```
 
-* 4. Clear the fields
+* 5. Clear the fields
 
 ```javascript
 var tuple = new Tuple;
