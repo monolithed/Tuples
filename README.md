@@ -4,7 +4,7 @@ Implementation of object Tuple
 
 ## Element access
 
-* **\* get ( [ String name ] );**<br />
+* ** get ( [ String name ] );**<br />
 
 ```javascrip
 tuple.get('key');
