@@ -154,6 +154,21 @@ tuple.clear(); // true
 tuple.size();  // 0
 ```
 
+* 6. Tie
+
+```javascript
+
+var tuple1 = new Tuple;
+tuple1.set('a', 0)
+
+var tuple2 = new Tuple;
+tuple2.set('b', 1);
+
+tuple1.tie(tuple2);
+
+tuple1.get('b'); // 1
+```
+
 
 ##_
 
