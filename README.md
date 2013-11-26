@@ -1,5 +1,7 @@
 # Tuple
 
+[![Coverage Status](https://coveralls.io/repos/monolithed/Tuples/badge.png)](https://coveralls.io/r/monolithed/Tuples)
+
 Implementation of object Tuple
 
 ## Element access
