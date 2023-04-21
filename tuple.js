@@ -1,8 +1,5 @@
 /**
  * Object Tuple
- * Licensed under the MIT
- * @depends: Object.keys, Function.prototype.bind, Function.prototype.apply
- * @author: Alexander Guinness
  * @version: 1.0
  * @date: Thu Aug 02 03:00:00 2012
  **/
