@@ -175,6 +175,4 @@ tuple1.get('b'); // 1
 ##_
 
 * License
-   This work is licensed under the MIT (MIT_LICENSE.txt) license
-
-* Copyright (c) 2012 [Alexander Guinness] (https://github.com/monolithed)
+   This work is licensed under the MIT license
